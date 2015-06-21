@@ -1,7 +1,6 @@
 library(shiny)
 
 generatePoints <- function() {
-    #             runif(input$n)
     mu1 <- runif(1, 5, 12)
     mu2 <- runif(1, 13, 20)
     
@@ -12,7 +11,7 @@ generatePoints <- function() {
     v$data <- points[points > -1 & points < 26]
 }
 
-# Define server logic required to plot various variables against mpg
+
 shinyServer(function(input, output) {
     
     v <- reactiveValues(data = NULL)
@@ -29,7 +28,6 @@ shinyServer(function(input, output) {
     }
     
     observeEvent(input$generateButton, {
-        #             runif(input$n)
         generatePoints()
     })
     
